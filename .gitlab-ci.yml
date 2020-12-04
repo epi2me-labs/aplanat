@@ -36,6 +36,8 @@ deploy:pypi:
     script:
         - make pypi_build/bin/activate
         - source pypi_build/bin/activate
+        - echo $TWINE_USERNAME
+        - echo $TWINE_PASSWORD
         - twine upload --non-interactive dist/*.tar.gz
     only:
         - tags
